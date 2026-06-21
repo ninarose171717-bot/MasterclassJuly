@@ -319,51 +319,12 @@
       top: 12px;
     }
 
-    /* ── STICKY SIDEBAR ── */
-    .sticky-side {
-      position: fixed;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 100;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      padding: 20px 10px;
-      background: var(--dark);
-      border-left: 1px solid rgba(255,255,255,0.08);
-      cursor: pointer;
-      transition: background 0.2s;
-      text-decoration: none;
-    }
-    .sticky-side:hover { background: var(--mid); }
-    .sticky-side span {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--taupe);
-      transition: color 0.2s;
-    }
-    .sticky-side:hover span { color: var(--cream); }
-    .sticky-side .side-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--accent);
-      writing-mode: horizontal-tb;
-    }
-    @media (max-width: 768px) { .sticky-side { display: none; } }
-
     /* ── COUNTDOWN ── */
     .page-countdown {
       display: flex;
       gap: 20px;
       justify-content: center;
-      margin: 20px 0 0;
+      margin: 0;
     }
     .page-countdown .cu {
       display: flex;
@@ -881,8 +842,8 @@
     <img src="photos/photo4.jpeg" alt="Nina Rose" class="hero-photo">
 
     <h1>You Have a Good Life.<br><em>So Why Doesn't It<br>Feel Good?</em></h1>
-    <p class="hero-sub" style="margin-bottom:16px;">There's one thing most of us were never shown.<br>This masterclass is about that.</p>
-    <div class="page-countdown" style="margin-bottom:16px;">
+    <p class="hero-sub" style="margin-bottom:20px;">There's one thing most of us were never shown.<br>This masterclass is about that.</p>
+    <div class="page-countdown" style="margin-bottom:20px;">
       <div class="cu"><span class="cn" id="h-days">--</span><span class="cl" style="color:var(--taupe);">Days</span></div>
       <div class="cu"><span class="cn" id="h-hours">--</span><span class="cl" style="color:var(--taupe);">Hours</span></div>
       <div class="cu"><span class="cn" id="h-mins">--</span><span class="cl" style="color:var(--taupe);">Min</span></div>
@@ -1056,9 +1017,9 @@
 <!-- ══════════════════ SIGNUP ══════════════════ -->
 <section class="signup-section">
   <div class="container">
-    <p class="tagline" style="margin-bottom: 16px;">90 minutes that might change the way you've been experiencing life.</p>
-    <p style="margin-bottom: 16px;"><span class="date-pill dark">7/7 &nbsp;·&nbsp; 2 PM Bangkok &nbsp;·&nbsp; 9 AM Europe</span></p>
-    <div class="page-countdown" style="margin: 0 0 16px;">
+    <p class="tagline" style="margin-bottom: 20px;">90 minutes that might change the way you've been experiencing life.</p>
+    <p style="margin: 0 0 20px;"><span class="date-pill dark">7/7 &nbsp;·&nbsp; 2 PM Bangkok &nbsp;·&nbsp; 9 AM Europe</span></p>
+    <div class="page-countdown" style="margin: 0 0 20px;">
       <div class="cu"><span class="cn" id="s-days" style="color:var(--mid);">--</span><span class="cl">Days</span></div>
       <div class="cu"><span class="cn" id="s-hours" style="color:var(--mid);">--</span><span class="cl">Hours</span></div>
       <div class="cu"><span class="cn" id="s-mins" style="color:var(--mid);">--</span><span class="cl">Min</span></div>
@@ -1153,9 +1114,9 @@
 <section class="final-cta">
   <div class="container">
     <h2>You've been waiting long enough<br>to feel like <em style="font-size: 1.2em;">yourself</em> again.</h2>
-    <p class="sub" style="margin-bottom: 16px;">90 minutes that might change the way you've been experiencing life.</p>
-    <p style="margin-bottom: 16px;"><span class="date-pill">7/7 &nbsp;·&nbsp; 2 PM Bangkok &nbsp;·&nbsp; 9 AM Europe</span></p>
-    <div class="page-countdown" style="margin: 0 0 16px;">
+    <p class="sub" style="margin-bottom: 20px;">90 minutes that might change the way you've been experiencing life.</p>
+    <p style="margin: 0 0 20px;"><span class="date-pill">7/7 &nbsp;·&nbsp; 2 PM Bangkok &nbsp;·&nbsp; 9 AM Europe</span></p>
+    <div class="page-countdown" style="margin: 0 0 20px;">
       <div class="cu"><span class="cn" id="f-days" style="color:var(--cream);">--</span><span class="cl" style="color:var(--taupe);">Days</span></div>
       <div class="cu"><span class="cn" id="f-hours" style="color:var(--cream);">--</span><span class="cl" style="color:var(--taupe);">Hours</span></div>
       <div class="cu"><span class="cn" id="f-mins" style="color:var(--cream);">--</span><span class="cl" style="color:var(--taupe);">Min</span></div>
@@ -1176,12 +1137,6 @@
     </div>
   </div>
 </section>
-
-<a class="sticky-side" href="#signup" onclick="document.querySelector('.signup-section').scrollIntoView({behavior:'smooth'}); return false;">
-  <span>Sign up</span>
-  <div class="side-dot"></div>
-  <span>7 / 7</span>
-</a>
 
 <footer>
   © 2026 Nina Rose &nbsp;·&nbsp; All rights reserved

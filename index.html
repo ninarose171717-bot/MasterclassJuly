@@ -319,6 +319,40 @@
       top: 12px;
     }
 
+    /* ── COUNTDOWN ── */
+    .page-countdown {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin: 20px 0 0;
+    }
+    .page-countdown .cu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .page-countdown .cn {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1;
+      min-width: 44px;
+      text-align: center;
+    }
+    .page-countdown .cl {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+    .hero-section .page-countdown .cn { color: var(--cream); }
+    .hero-section .page-countdown .cl { color: var(--taupe); }
+    .signup-section .page-countdown .cn { color: var(--mid); }
+    .signup-section .page-countdown .cl { color: var(--taupe); }
+
     /* ── DIVIDER ── */
     .divider {
       width: 48px;
@@ -809,6 +843,12 @@
 
     <h1>You Have a Good Life.<br><em>So Why Doesn't It<br>Feel Good?</em></h1>
     <p class="hero-sub">There's one thing most of us were never shown.<br>This masterclass is about that.</p>
+    <div class="page-countdown" style="margin-bottom:32px;">
+      <div class="cu"><span class="cn" id="h-days">--</span><span class="cl" style="color:var(--taupe);">Days</span></div>
+      <div class="cu"><span class="cn" id="h-hours">--</span><span class="cl" style="color:var(--taupe);">Hours</span></div>
+      <div class="cu"><span class="cn" id="h-mins">--</span><span class="cl" style="color:var(--taupe);">Min</span></div>
+      <div class="cu"><span class="cn" id="h-secs">--</span><span class="cl" style="color:var(--taupe);">Sec</span></div>
+    </div>
 
     <div class="cta-block">
       <label>First Name</label>
@@ -979,6 +1019,12 @@
   <div class="container">
     <p class="tagline" style="margin-bottom: 8px;">90 minutes that might change the way you've been experiencing life.</p>
     <p><span class="date-pill dark">7/7 &nbsp;·&nbsp; 2 PM Bangkok &nbsp;·&nbsp; 9 AM Europe</span></p>
+    <div class="page-countdown" style="margin: 16px 0 24px;">
+      <div class="cu"><span class="cn" id="s-days" style="color:var(--mid);">--</span><span class="cl">Days</span></div>
+      <div class="cu"><span class="cn" id="s-hours" style="color:var(--mid);">--</span><span class="cl">Hours</span></div>
+      <div class="cu"><span class="cn" id="s-mins" style="color:var(--mid);">--</span><span class="cl">Min</span></div>
+      <div class="cu"><span class="cn" id="s-secs" style="color:var(--mid);">--</span><span class="cl">Sec</span></div>
+    </div>
     <div class="cta-block light">
       <label>First Name</label>
       <input type="text" placeholder="Your first name" autocomplete="given-name">
@@ -1131,6 +1177,27 @@
       console.error(e);
     }
   }
+
+  (function() {
+    var target = new Date('2026-07-07T07:00:00Z');
+    var ids = [['h-days','h-hours','h-mins','h-secs'],['s-days','s-hours','s-mins','s-secs']];
+    function tick() {
+      var diff = target - new Date();
+      if (diff < 0) diff = 0;
+      var d = Math.floor(diff/86400000);
+      var h = Math.floor((diff%86400000)/3600000);
+      var m = Math.floor((diff%3600000)/60000);
+      var s = Math.floor((diff%60000)/1000);
+      ids.forEach(function(set) {
+        var el;
+        el = document.getElementById(set[0]); if(el) el.textContent = String(d).padStart(2,'0');
+        el = document.getElementById(set[1]); if(el) el.textContent = String(h).padStart(2,'0');
+        el = document.getElementById(set[2]); if(el) el.textContent = String(m).padStart(2,'0');
+        el = document.getElementById(set[3]); if(el) el.textContent = String(s).padStart(2,'0');
+      });
+    }
+    tick(); setInterval(tick, 1000);
+  })();
 
   document.querySelectorAll('.cta-block').forEach(function(block) {
     var btn = block.querySelector('.btn');

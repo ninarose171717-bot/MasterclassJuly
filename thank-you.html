@@ -124,6 +124,47 @@
       color: var(--accent);
     }
 
+    .countdown {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      margin: 40px 0 16px;
+    }
+
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .countdown-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 8vw, 64px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .countdown-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--taupe);
+    }
+
+    .countdown-caption {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--taupe);
+      margin-bottom: 40px;
+    }
+
     .check-inbox {
       margin-top: 64px;
       font-size: 13px;
@@ -139,9 +180,15 @@
 
   <h1>You're in.<br>I cannot wait to<br>see you on <em>July 7.</em></h1>
 
-  <p class="sub">Check your inbox — your confirmation and Zoom link are waiting for you.</p>
+  <p class="sub">Check your inbox. Your confirmation and Zoom link are waiting for you.</p>
 
-  <div class="date-pill">7/7 &nbsp;·&nbsp; 2 PM Bangkok &nbsp;·&nbsp; 9 AM Europe</div>
+  <div class="countdown">
+    <div class="countdown-unit"><span class="countdown-number" id="cd-days">--</span><span class="countdown-label">Days</span></div>
+    <div class="countdown-unit"><span class="countdown-number" id="cd-hours">--</span><span class="countdown-label">Hours</span></div>
+    <div class="countdown-unit"><span class="countdown-number" id="cd-minutes">--</span><span class="countdown-label">Minutes</span></div>
+    <div class="countdown-unit"><span class="countdown-number" id="cd-seconds">--</span><span class="countdown-label">Seconds</span></div>
+  </div>
+  <p class="countdown-caption">until we meet on July 7 ♡</p>
 
   <div class="divider"></div>
 
@@ -155,6 +202,29 @@
   <p class="check-inbox">Free Masterclass &nbsp;·&nbsp; 90 min &nbsp;·&nbsp; Nina Rose</p>
 
   <script>
+    (function() {
+      var target = new Date('2026-07-07T07:00:00Z'); // 2 PM Bangkok = UTC+7
+      function tick() {
+        var now = new Date();
+        var diff = target - now;
+        if (diff <= 0) {
+          document.querySelector('.countdown').style.display = 'none';
+          document.querySelector('.countdown-caption').textContent = 'It\'s today. See you soon ♡';
+          return;
+        }
+        var days = Math.floor(diff / 86400000);
+        var hours = Math.floor((diff % 86400000) / 3600000);
+        var mins = Math.floor((diff % 3600000) / 60000);
+        var secs = Math.floor((diff % 60000) / 1000);
+        document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
+        document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+        document.getElementById('cd-minutes').textContent = String(mins).padStart(2,'0');
+        document.getElementById('cd-seconds').textContent = String(secs).padStart(2,'0');
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+
     function copyLink(btn) {
       navigator.clipboard.writeText('https://masterclass-july.vercel.app').then(function() {
         btn.classList.add('copied');

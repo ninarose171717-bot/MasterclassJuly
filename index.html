@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>You Have a Good Life. So Why Doesn't It Feel Good? — Nina Rose</title>
+  <meta property="og:title" content="You Have a Good Life. So Why Doesn't It Feel Good?">
+  <meta property="og:description" content="A free 90-minute masterclass with Nina Rose. July 7 · 2 PM Bangkok · 9 AM Europe. There's one thing most of us were never shown. This masterclass is about that.">
+  <meta property="og:image" content="https://masterclass-july.vercel.app/photos/photo4.jpeg">
+  <meta property="og:url" content="https://masterclass-july.vercel.app">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
@@ -690,6 +696,25 @@
       margin: 0 auto;
     }
 
+    .community-section .community-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 6vw, 58px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .community-section .community-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18px, 2.5vw, 23px);
+      font-style: italic;
+      color: var(--accent);
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+
     .community-section p {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(18px, 2.5vw, 22px);
@@ -1028,6 +1053,8 @@
 
 <section class="community-section">
   <div class="container">
+    <p class="community-headline">There's one more thing.</p>
+    <p class="community-sub">Something else I want to offer you.</p>
     <p><em>I'd also love to invite you into something I'm creating.</em></p>
     <p>A cozy, warm space where we spend time with ourselves, with each other, with the breath, and with life.</p>
     <p>There are going to be weekly live calls and practices. A place where coming back to yourself is not just welcomed, <em>it's the whole point.</em> Where you show up exactly as you are.</p>
@@ -1089,8 +1116,7 @@
       });
 
       if (res.ok || res.status === 200 || res.status === 201) {
-        btn.innerHTML = 'You\'re in.<br>I cannot wait to see you on 7/7 ♡';
-        btn.style.background = '#E8E0D5'; btn.style.color = '#2A1F18';
+        window.location.href = '/thank-you.html';
       } else {
         const data = await res.json();
         btn.disabled = false;

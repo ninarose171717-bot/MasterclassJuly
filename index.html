@@ -126,6 +126,69 @@
       margin-bottom: 8px;
     }
 
+    .cta-block label.consent-wrap {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 20px;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: inherit;
+      color: inherit;
+      margin-bottom: 0;
+    }
+    .cta-block label.consent-wrap .consent-input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+    }
+    .consent-box {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border: 2px solid var(--taupe);
+      border-radius: 4px;
+      background: transparent;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .consent-input:checked + .consent-box {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .consent-box::after {
+      content: '✓';
+      color: transparent;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: sans-serif;
+      line-height: 1;
+    }
+    .consent-input:checked + .consent-box::after {
+      color: var(--cream);
+    }
+    .consent-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(15px, 2.2vw, 17px);
+      font-style: italic;
+      color: var(--taupe);
+      line-height: 1.6;
+      flex: 1;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .cta-block.light .consent-text { color: var(--mid); }
+    .cta-block.light .consent-box { border-color: var(--accent); }
+
     .cta-block.light label {
       color: var(--accent);
     }
@@ -729,9 +792,10 @@
       <input type="email" placeholder="your@email.com" autocomplete="email">
       <button class="btn">I want this →</button>
       <p class="cta-note">Free Masterclass &nbsp;·&nbsp; 90 min</p>
-      <label style="display:flex; align-items:flex-start; gap:10px; margin-top:16px; cursor:pointer; text-align:left; width:100%; box-sizing:border-box;">
-        <input type="checkbox" style="margin-top:3px; accent-color:var(--accent); flex-shrink:0; width:16px; height:16px;">
-        <span class="cta-note" style="opacity:0.85; flex:1; line-height:1.6; text-transform:none; letter-spacing:0; font-size:13px;">I'd also love to receive your notes on life, on coming home to ourselves, and everything in between. ♡</span>
+      <label class="consent-wrap">
+        <input type="checkbox" class="consent-input">
+        <span class="consent-box"></span>
+        <span class="consent-text">I'd also love to receive your notes on life, on coming home to ourselves, and everything in between. ♡</span>
       </label>
     </div>
   </div>
@@ -898,9 +962,10 @@
       <input type="email" placeholder="your@email.com" autocomplete="email">
       <button class="btn">I want this →</button>
       <p class="cta-note">Free Masterclass &nbsp;·&nbsp; 90 min</p>
-      <label style="display:flex; align-items:flex-start; gap:10px; margin-top:16px; cursor:pointer; text-align:left; width:100%; box-sizing:border-box;">
-        <input type="checkbox" style="margin-top:3px; accent-color:var(--accent); flex-shrink:0; width:16px; height:16px;">
-        <span class="cta-note" style="opacity:0.85; flex:1; line-height:1.6; text-transform:none; letter-spacing:0; font-size:13px;">I'd also love to receive your notes on life, on coming home to ourselves, and everything in between. ♡</span>
+      <label class="consent-wrap">
+        <input type="checkbox" class="consent-input">
+        <span class="consent-box"></span>
+        <span class="consent-text">I'd also love to receive your notes on life, on coming home to ourselves, and everything in between. ♡</span>
       </label>
     </div>
   </div>
@@ -986,9 +1051,10 @@
       <input type="email" placeholder="your@email.com" autocomplete="email">
       <button class="btn">I want this →</button>
       <p class="cta-note">Free Masterclass &nbsp;·&nbsp; 90 min</p>
-      <label style="display:flex; align-items:flex-start; gap:10px; margin-top:16px; cursor:pointer; text-align:left; width:100%; box-sizing:border-box;">
-        <input type="checkbox" style="margin-top:3px; accent-color:var(--accent); flex-shrink:0; width:16px; height:16px;">
-        <span class="cta-note" style="opacity:0.85; flex:1; line-height:1.6; text-transform:none; letter-spacing:0; font-size:13px;">I'd also love to receive your notes on life, on coming home to ourselves, and everything in between. ♡</span>
+      <label class="consent-wrap">
+        <input type="checkbox" class="consent-input">
+        <span class="consent-box"></span>
+        <span class="consent-text">I'd also love to receive your notes on life, on coming home to ourselves, and everything in between. ♡</span>
       </label>
     </div>
   </div>
@@ -1003,9 +1069,12 @@
   const API_KEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZGMxZDU1MzgyMTI5ODhjZTllZGJiNDYyZmZkNmU2NjhkN2JiNzI5MDQzYTY2ZmQ0MzgyMTEwODdhODFlZTUzMDFiZmMxNzA4MmRkYzkyZGIiLCJpYXQiOjE3ODE5NDE2ODguNTUyNzg4LCJuYmYiOjE3ODE5NDE2ODguNTUyNzksImV4cCI6NDkzNzYxNTI4OC41NDg0NjMsInN1YiI6IjkwNjQyNiIsInNjb3BlcyI6W119.RnHj_LwE5j_1oADEC0c6GBZuq8Q6fI6sFVDyF2LjioafIychTwzmh3n1r65UkYUL1CZgnAvEaX73gsnq3_C9PKcII7H3u8YxdiTTixry9q5cvxE-Ccl-Trda_khbRfNGVVxinsezu2tNqFogO4uhgz4FBGPTnYBNw2qqigKn9c8WKVZBqiZ-s53-BX_9nXiBsIpvJzswG5CimR1ijDzKhz7irEFfrJfpukkqXIs0t4u1QSzceSYywTlWI7DzTH1jXnUon64z2SO78MwtBtF1jTezTtqwCklqKpDBew6u24tABlV-jc6xmDnwMoaLLwsZibz56Nynz-FXu_zSnWSsw-WQYvpNIw20z5CGRzQnR7FQ9ogbcJPbnfCD-sU5Y-EVqOkqziDJg10-_WTIO8cZdz9W52VPkccjKeOWZdZtSH6vYef2L-ksMDirjHFAvvKkgyVmnFL81bQwLVCLwwtXfFdaEfaonz__eFFLRZWSv6MaiYD57mhGoo291nFNd8uTAkHOYJl3cME5Jsv8fVc03OFnH9vFmmbCVMv3R_KodP7MEnBGT8HJDvuXk0hUq5UW_v_HoLjeIYEuKi90awh8wGSgC4WW1XAE4Aa52cdLnEpx3oQ2njX0DBR2bDZEt00Pun05xnhehoTrE3KZoRbO36SMalRy8DC9xHSRGbAHngQ';
   const GROUP_ID = '189681547487479679';
 
-  async function submitToMailerLite(email, name, btn) {
+  async function submitToMailerLite(email, name, btn, hasConsent) {
     btn.disabled = true;
     btn.textContent = 'Saving your spot …';
+
+    const payload = { email: email, fields: { name: name }, groups: [GROUP_ID] };
+    if (hasConsent) payload.tags = ['email-consent'];
 
     try {
       const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
@@ -1015,11 +1084,7 @@
           'Accept': 'application/json',
           'Authorization': 'Bearer ' + API_KEY
         },
-        body: JSON.stringify({
-          email: email,
-          fields: { name: name },
-          groups: [GROUP_ID]
-        })
+        body: JSON.stringify(payload)
       });
 
       if (res.ok || res.status === 200 || res.status === 201) {
@@ -1049,12 +1114,14 @@
       var emailInput = inputs[1];
       var name = nameInput ? nameInput.value.trim() : '';
       var email = emailInput ? emailInput.value.trim() : '';
+      var consentBox = block.querySelector('.consent-input');
+      var hasConsent = consentBox ? consentBox.checked : false;
 
       if (!email || !email.includes('@')) {
         alert('Please enter a valid email address.');
         return;
       }
-      submitToMailerLite(email, name, btn);
+      submitToMailerLite(email, name, btn, hasConsent);
     });
   });
 })();

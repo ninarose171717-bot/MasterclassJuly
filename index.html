@@ -1068,13 +1068,15 @@
 (function() {
   const API_KEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZGMxZDU1MzgyMTI5ODhjZTllZGJiNDYyZmZkNmU2NjhkN2JiNzI5MDQzYTY2ZmQ0MzgyMTEwODdhODFlZTUzMDFiZmMxNzA4MmRkYzkyZGIiLCJpYXQiOjE3ODE5NDE2ODguNTUyNzg4LCJuYmYiOjE3ODE5NDE2ODguNTUyNzksImV4cCI6NDkzNzYxNTI4OC41NDg0NjMsInN1YiI6IjkwNjQyNiIsInNjb3BlcyI6W119.RnHj_LwE5j_1oADEC0c6GBZuq8Q6fI6sFVDyF2LjioafIychTwzmh3n1r65UkYUL1CZgnAvEaX73gsnq3_C9PKcII7H3u8YxdiTTixry9q5cvxE-Ccl-Trda_khbRfNGVVxinsezu2tNqFogO4uhgz4FBGPTnYBNw2qqigKn9c8WKVZBqiZ-s53-BX_9nXiBsIpvJzswG5CimR1ijDzKhz7irEFfrJfpukkqXIs0t4u1QSzceSYywTlWI7DzTH1jXnUon64z2SO78MwtBtF1jTezTtqwCklqKpDBew6u24tABlV-jc6xmDnwMoaLLwsZibz56Nynz-FXu_zSnWSsw-WQYvpNIw20z5CGRzQnR7FQ9ogbcJPbnfCD-sU5Y-EVqOkqziDJg10-_WTIO8cZdz9W52VPkccjKeOWZdZtSH6vYef2L-ksMDirjHFAvvKkgyVmnFL81bQwLVCLwwtXfFdaEfaonz__eFFLRZWSv6MaiYD57mhGoo291nFNd8uTAkHOYJl3cME5Jsv8fVc03OFnH9vFmmbCVMv3R_KodP7MEnBGT8HJDvuXk0hUq5UW_v_HoLjeIYEuKi90awh8wGSgC4WW1XAE4Aa52cdLnEpx3oQ2njX0DBR2bDZEt00Pun05xnhehoTrE3KZoRbO36SMalRy8DC9xHSRGbAHngQ';
   const GROUP_ID = '189681547487479679';
+  const EMAIL_LIST_ID = '190864964477518984';
 
   async function submitToMailerLite(email, name, btn, hasConsent) {
     btn.disabled = true;
     btn.textContent = 'Saving your spot …';
 
-    const payload = { email: email, fields: { name: name }, groups: [GROUP_ID] };
-    if (hasConsent) payload.tags = ['email-consent'];
+    const groups = [GROUP_ID];
+    if (hasConsent) groups.push(EMAIL_LIST_ID);
+    const payload = { email: email, fields: { name: name }, groups: groups };
 
     try {
       const res = await fetch('https://connect.mailerlite.com/api/subscribers', {

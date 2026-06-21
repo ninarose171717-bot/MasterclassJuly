@@ -42,7 +42,7 @@
     .hero {
       background: var(--dark);
       color: var(--cream);
-      padding: 100px 24px 80px;
+      padding: 130px 24px 80px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -317,6 +317,56 @@
       font-size: 1.4em;
       line-height: 1;
       top: 12px;
+    }
+
+    /* ── TOP NAV ── */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 28px;
+      background: rgba(42, 31, 24, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .top-nav-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .top-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .top-nav-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .top-nav-links a:hover { color: var(--cream); }
+    .top-nav-links .nav-sep {
+      width: 1px;
+      height: 12px;
+      background: rgba(255,255,255,0.15);
+    }
+    @media (max-width: 480px) {
+      .top-nav { padding: 12px 16px; }
+      .top-nav-links .nav-email { display: none; }
+      .top-nav-links .nav-sep { display: none; }
     }
 
     /* ── COUNTDOWN ── */
@@ -833,6 +883,15 @@
   </style>
 </head>
 <body>
+
+<nav class="top-nav">
+  <a class="top-nav-name" href="#">Nina Rose</a>
+  <div class="top-nav-links">
+    <a href="https://www.instagram.com/iam.ninarose" target="_blank">@iam.ninarose</a>
+    <div class="nav-sep"></div>
+    <a class="nav-email" href="mailto:hello@iamninarose.com">hello@iamninarose.com</a>
+  </div>
+</nav>
 
 <!-- ══════════════════ HERO ══════════════════ -->
 <section class="hero">

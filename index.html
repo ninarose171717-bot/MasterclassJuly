@@ -268,6 +268,25 @@
       margin: 0 auto;
     }
 
+    /* ── SOMEHOW SECTION ── */
+    .somehow-section {
+      background: var(--cream);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .somehow-section p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+
+    .somehow-section p:last-child { margin-bottom: 0; }
+
     /* ── FEEL SECTION ── */
     .feel-section {
       background: var(--cream);
@@ -636,11 +655,12 @@
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.14em;
+      line-height: 1.4;
       text-transform: uppercase;
       color: #D4B896;
       border: 1px solid rgba(212,184,150,0.35);
       border-radius: 20px;
-      padding: 5px 16px;
+      padding: 8px 20px;
       background: rgba(212,184,150,0.07);
       margin-bottom: 28px;
     }
@@ -961,8 +981,8 @@
   </div>
 </section>
 
-<section style="background: var(--cream); padding: 80px 24px; text-align: center;">
-  <div class="container" style="max-width: 640px; margin: 0 auto;">
+<section class="somehow-section">
+  <div class="container" style="max-width: 580px; margin: 0 auto;">
     <p>But somehow, that moment never comes.</p>
     <p>Somehow there's always something else,<br>that needs your attention more than&nbsp;you.</p>
     <p>Somehow you can just never come up with <em>an excuse</em> to take&nbsp;care&nbsp;of&nbsp;you.</p>

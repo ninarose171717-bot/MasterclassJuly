@@ -329,19 +329,8 @@
       font-size: clamp(19px, 2.8vw, 24px);
       font-weight: 400;
       color: var(--mid);
-      padding: 10px 0 10px 28px;
-      position: relative;
+      padding: 10px 0;
       border-bottom: 1px solid var(--sand);
-    }
-
-    .feel-bullets li::before {
-      content: '·';
-      position: absolute;
-      left: 4px;
-      color: var(--accent);
-      font-size: 1.4em;
-      line-height: 1;
-      top: 12px;
     }
 
     /* ── TOP NAV ── */
@@ -448,8 +437,7 @@
       font-style: italic;
       font-weight: 400;
       color: var(--mid);
-      border-left: 2px solid var(--taupe);
-      padding: 6px 0 6px 24px;
+      padding: 6px 0;
       margin: 28px 0;
       line-height: 1.6;
     }
@@ -546,6 +534,9 @@
 
     .check-list {
       list-style: none;
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: left;
     }
 
     .check-list li {

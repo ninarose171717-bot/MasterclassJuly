@@ -53,14 +53,18 @@
       color: var(--accent);
     }
 
-    .sub {
+    .inbox-line {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(18px, 2.5vw, 22px);
+      font-size: clamp(20px, 3vw, 26px);
       font-style: italic;
-      color: var(--taupe);
-      line-height: 1.7;
+      color: var(--cream);
+      line-height: 1.5;
       max-width: 520px;
-      margin: 0 auto 32px;
+      margin: 0 auto;
+    }
+
+    .inbox-block {
+      margin-bottom: 32px;
     }
 
     .date-pill {
@@ -180,7 +184,10 @@
 
   <h1>You're in.<br>I cannot wait to<br>see you on <em>July 7.</em></h1>
 
-  <p class="sub">Check your inbox. Your confirmation and Zoom link are waiting for you.</p>
+  <div class="inbox-block">
+    <p class="inbox-line">Check your inbox.</p>
+    <p class="inbox-line">Your confirmation and Zoom link are waiting for you.</p>
+  </div>
 
   <div class="countdown">
     <div class="countdown-unit"><span class="countdown-number" id="cd-days">--</span><span class="countdown-label">Days</span></div>

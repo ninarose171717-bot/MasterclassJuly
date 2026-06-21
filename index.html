@@ -270,24 +270,42 @@
 
     /* ── SOMEHOW SECTION ── */
     .somehow-section {
-      background: var(--cream);
-      padding: 80px 24px;
+      background: var(--dark);
+      background-image: url('photos/65302B59-EBAC-4473-AB95-3F0779499A08.png');
+      background-size: cover;
+      background-position: center 70%;
+      padding: 100px 24px;
       text-align: center;
+      position: relative;
+    }
+
+    .somehow-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 12, 6, 0.68);
+      pointer-events: none;
+    }
+
+    .somehow-section .container {
+      position: relative;
+      z-index: 1;
     }
 
     .somehow-section p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(22px, 3.5vw, 30px);
+      font-size: clamp(20px, 3vw, 26px);
       font-style: normal;
-      font-weight: 400;
-      color: var(--dark);
-      line-height: 1.6;
-      margin-bottom: 36px;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.7;
+      margin-bottom: 32px;
     }
 
     .somehow-section p em {
       font-style: italic;
-      color: var(--accent);
+      color: #D4B896;
+      white-space: nowrap;
     }
 
     .somehow-section p:last-child { margin-bottom: 0; }

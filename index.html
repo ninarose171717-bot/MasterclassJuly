@@ -513,7 +513,24 @@
     /* ── WHAT SECTION ── */
     .what-section {
       background: var(--cream);
+      background-image: url('photos/65302B59-EBAC-4473-AB95-3F0779499A08.png');
+      background-size: cover;
+      background-position: center 50%;
       text-align: center;
+      position: relative;
+    }
+
+    .what-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(250, 248, 244, 0.82);
+      pointer-events: none;
+    }
+
+    .what-section .container {
+      position: relative;
+      z-index: 1;
     }
 
     .what-section h2 {

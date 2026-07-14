@@ -1355,13 +1355,38 @@
       color: var(--mid); line-height: 1.9; max-width: 540px;
       margin: 0 auto; text-align: center; font-weight: 300;
     }
-    .when-shift p { margin-bottom: 20px; }
+    .when-shift p { margin-bottom: 28px; }
+    .when-shift .beat {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.75;
+      margin: 52px 0;
+    }
+    .when-shift .breathe { margin-top: 60px; }
+    .when-divider {
+      max-width: 100px;
+      margin: 64px auto;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
     .when-rare {
       font-family: var(--serif); font-size: clamp(0.95rem, 1.3vw, 1.1rem);
       color: var(--mid); line-height: 1.9; max-width: 540px;
       margin: 0 auto; text-align: center; font-weight: 300;
     }
-    .when-rare p { margin-bottom: 20px; }
+    .when-rare p { margin-bottom: 24px; }
+    .when-rare .beat {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
     .when-close {
       font-family: var(--serif); font-size: clamp(1.15rem, 1.7vw, 1.45rem);
       color: var(--text); line-height: 1.8; max-width: 480px;
@@ -1674,18 +1699,24 @@
       </ul>
 
       <div class="when-shift rv s3">
-        <p>And then, almost without noticing it &hellip; our attention leaves us.</p>
-        <p>It moves toward making sense of the other person. Or complaining about them. Then making ourselves smaller and easier to understand. Saying it in a nicer way. Explaining what we actually meant. Or not saying it altogether.</p>
+        <p class="beat">And then, almost without noticing it &hellip; our attention leaves us.</p>
+        <p>It moves toward making sense of the other person.<br>
+        Or complaining about them.<br>
+        Then making ourselves smaller and easier to understand.<br>
+        Saying it in a nicer way. Explaining what we actually meant.<br>
+        Or not saying it altogether.</p>
         <p>Waiting. Until finally &hellip; <em>performing okay.</em></p>
-        <p style="margin-top: 40px;">This is very human. And a deeply intelligent way of staying connected.</p>
+        <p class="breathe">This is very human. And a deeply intelligent way of staying connected.</p>
         <p>Because somewhere along the way, many of us learned that staying connected to others sometimes meant quietly leaving ourselves. Not necessarily because anyone asked us to. Or because we consciously chose to.</p>
         <p>It&rsquo;s because our bodies are incredibly intelligent. They learned what helped us belong. And they kept doing it.</p>
         <p>And after enough years of doing that, something subtle begins to happen. Life doesn&rsquo;t necessarily become bad. It just becomes &hellip; flatter in some way. Less vivid. Less felt.</p>
         <p>We still laugh. We still love. We still have beautiful moments &hellip; a bunch of them. We just feel like something is missing.</p>
       </div>
 
+      <hr class="when-divider rv">
+
       <div class="when-rare rv s3">
-        <p>But then &hellip;</p>
+        <p class="beat">But then &hellip;</p>
         <p>You know those rare days when we&rsquo;re walking home, or sitting in a caf&eacute;, or swimming in the sea, and for no particular reason we suddenly feel completely here? Where colors feel brighter. We can feel the sun on our cheeks. The warmth in the body. Time slows down. Nothing extraordinary has happened. And yet life feels astonishingly intimate.</p>
         <p>I don&rsquo;t think those moments happen because life finally cooperates.</p>
       </div>

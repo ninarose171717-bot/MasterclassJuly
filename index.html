@@ -864,12 +864,12 @@
     }
     .about-body p.em {
       font-family: var(--serif);
-      font-size: clamp(1.45rem, 2vw, 1.75rem);
+      font-size: clamp(1.1rem, 1.4vw, 1.3rem);
       font-style: italic;
       font-weight: 400;
       color: var(--text);
-      line-height: 1.55;
-      margin-bottom: 36px;
+      line-height: 1.65;
+      margin-bottom: 28px;
     }
 
     /* ─────────────────────────────
@@ -1535,6 +1535,61 @@
       font-style: italic; font-weight: 300;
     }
 
+    /* ── Drapes overlay on "When life asks" section ── */
+    .when-section { position: relative; overflow: hidden; }
+    .when-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url('./photos that can be used/drapes.png?v=2');
+      background-size: cover; background-position: center;
+      opacity: 0.22; mix-blend-mode: multiply; pointer-events: none; z-index: 0;
+    }
+    .when-section .inner { position: relative; z-index: 1; }
+
+    /* ── Circle photo utility ── */
+    .hero-circle {
+      width: 140px; height: 140px;
+      border-radius: 50%; overflow: hidden;
+      margin: 24px auto 32px;
+      flex-shrink: 0;
+    }
+    .hero-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+    /* ── Explore arch cards — 3-column horizontal ── */
+    .explore-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1000px;
+      margin: 0 auto 56px;
+    }
+    .explore-card {
+      display: flex; flex-direction: column; text-align: center;
+    }
+    .explore-card-photo {
+      width: 100%;
+      aspect-ratio: 2/3;
+      border-radius: 50% 50% 0 0 / 110px 110px 0 0;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .explore-card-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    }
+    .explore-card-body { padding: 0 16px 40px; }
+    @media (max-width: 760px) {
+      .explore-cards { grid-template-columns: 1fr; }
+      .explore-card-photo { aspect-ratio: 3/2; border-radius: 50% 50% 0 0 / 60px 60px 0 0; }
+    }
+
+    /* ── When-shift text (italic flow between list and close) ── */
+    .when-middle {
+      font-family: var(--serif); font-size: clamp(1rem, 1.35vw, 1.18rem);
+      color: var(--mid); line-height: 2; text-align: center; font-weight: 300;
+      max-width: 480px; margin: 0 auto 32px;
+    }
+    .when-middle p { margin-bottom: 4px; }
+
     /* ── Drapes overlay on "What this masterclass" section ── */
     .mc-about-section { position: relative; overflow: hidden; }
     .mc-about-section::before {
@@ -1654,7 +1709,12 @@
     <div class="hero-left">
       <p class="hero-date h-rise">28/7 &nbsp;·&nbsp; 2 PM Bangkok &nbsp;·&nbsp; 9 AM Europe</p>
       <h1 class="h-rise d1"><span class="h1-line1">The life you&rsquo;ve been looking for</span><br><span class="h1-line2">might be the one you&rsquo;ve been leaving.</span></h1>
-      <p class="hero-desc--lead h-rise d2">A free 90-minute masterclass for the woman who longs to stop living beside her life &hellip; and instead fully in it.</p>
+
+      <div class="hero-circle h-rise d2">
+        <img src="./photos%20that%20can%20be%20used/ChatGPT%20Image%20Jul%2015%2C%202026%2C%2006_12_13%20PM.png" alt="" loading="eager">
+      </div>
+
+      <p class="hero-desc--lead h-rise d3"><strong>A free 90-minute masterclass</strong> for the woman who longs to stop living beside her life &hellip; and instead fully in it.</p>
     </div>
 
     <div class="hero-middle h-appear d1">
@@ -1710,7 +1770,7 @@
   <!-- ══════════════════════════
        WHEN LIFE ASKS SOMETHING OF US
   ══════════════════════════ -->
-  <section class="section s-c1">
+  <section class="section s-c1 when-section">
     <div class="inner">
 
       <h2 class="when-heading rv s1">When life asks something of us &hellip;</h2>
@@ -1728,7 +1788,17 @@
         <li>Or &hellip; just feeling too much of everything.</li>
       </ul>
 
-      <p class="when-close rv s3">And then, almost without noticing it &hellip; our attention leaves us.<br><em>Until finally &hellip; performing okay.</em></p>
+      <p class="when-close rv s3">And then, almost without noticing it &hellip; our attention leaves us.</p>
+
+      <div class="when-middle rv s3">
+        <p>It moves toward making sense of the other person.</p>
+        <p>Or complaining about them.</p>
+        <p>Then making ourselves smaller and easier to understand.</p>
+        <p>Saying it in a nicer way. Explaining what we actually meant.</p>
+        <p>Or not saying it altogether.</p>
+      </div>
+
+      <p class="when-close rv s4"><em>Until finally &hellip; performing okay.</em></p>
 
     </div>
   </section>
@@ -1758,24 +1828,39 @@
 
       <h2 class="explore-intro rv s1">Together, we will explore &hellip;</h2>
 
-      <div class="explore-ovals">
+      <div class="explore-cards">
 
-        <div class="explore-oval rv s1">
-          <span class="explore-oval-n">01</span>
-          <h3>Why our attention leaves us in the moments we need ourselves the most.</h3>
-          <p>We&rsquo;ll begin noticing the subtle moments where we move away from our own experience and toward fixing, explaining, anticipating, shrinking, proving, or holding everything together.</p>
+        <div class="explore-card rv s1">
+          <div class="explore-card-photo">
+            <img src="./photos%20that%20can%20be%20used/FB4C9617-DADC-4764-911C-938DA5838BF0.png" alt="">
+          </div>
+          <div class="explore-card-body">
+            <span class="explore-oval-n">01</span>
+            <h3>Why our attention leaves us in the moments we need ourselves the most.</h3>
+            <p>We&rsquo;ll begin noticing the subtle moments where we move away from our own experience and toward fixing, explaining, anticipating, shrinking, proving, or holding everything together.</p>
+          </div>
         </div>
 
-        <div class="explore-oval rv s2">
-          <span class="explore-oval-n">02</span>
-          <h3>What we learned about connection, love, and belonging.</h3>
-          <p>We&rsquo;ll explore why our needs, desires, emotions, and inner signals can sometimes feel difficult to stay close to &hellip; especially when love, conflict, fear, disappointment, or other people come into the picture.</p>
+        <div class="explore-card rv s2">
+          <div class="explore-card-photo">
+            <img src="./photos%20that%20can%20be%20used/32E60206-5531-4CAE-BB87-6F0D7A3C5055.png" alt="">
+          </div>
+          <div class="explore-card-body">
+            <span class="explore-oval-n">02</span>
+            <h3>What we learned about connection, love, and belonging.</h3>
+            <p>We&rsquo;ll explore why our needs, desires, emotions, and inner signals can sometimes feel difficult to stay close to &hellip; especially when love, conflict, fear, disappointment, or other people come into the picture.</p>
+          </div>
         </div>
 
-        <div class="explore-oval rv s3">
-          <span class="explore-oval-n">03</span>
-          <h3>What it feels like to return.</h3>
-          <p>Not as another thing to achieve. Not as another version of self-improvement. But as a felt experience of coming back into relationship with ourselves. Because the woman who is feeling, needing, wanting, aching, and living this life deserves to be met too.</p>
+        <div class="explore-card rv s3">
+          <div class="explore-card-photo">
+            <img src="./photos%20that%20can%20be%20used/B41D525A-4AF2-4DCC-B76C-1D35E320E1A3.png" alt="">
+          </div>
+          <div class="explore-card-body">
+            <span class="explore-oval-n">03</span>
+            <h3>What it feels like to return.</h3>
+            <p>Not as another thing to achieve. Not as another version of self-improvement. But as a felt experience of coming back into relationship with ourselves. Because the woman who is feeling, needing, wanting, aching, and living this life deserves to be met too.</p>
+          </div>
         </div>
 
       </div>

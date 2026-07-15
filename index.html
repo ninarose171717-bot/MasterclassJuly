@@ -176,18 +176,28 @@
       min-height: 100vh;
       background: var(--c1);
       display: grid;
-      grid-template-columns: 60% 40%;
+      grid-template-columns: 35% 30% 35%;
       align-items: stretch;
     }
 
     .hero-left {
-      padding: 160px 72px 120px 9vw;
+      padding: 160px 32px 120px 5vw;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       gap: 0;
+    }
+
+    .hero-middle {
+      padding: 160px 24px 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
     }
 
     .hero-right { display: block; }
@@ -203,14 +213,16 @@
 
     h1 {
       font-family: var(--serif);
-      font-size: clamp(2.2rem, 3.4vw, 3.8rem);
+      font-size: clamp(1.7rem, 2.4vw, 2.8rem);
       font-weight: 300;
       font-style: italic;
-      line-height: 1.15;
+      line-height: 1.25;
       color: var(--text);
-      margin-bottom: 44px;
-      max-width: 440px;
+      margin-bottom: 36px;
+      max-width: 380px;
     }
+    .h1-line1 { color: var(--text); }
+    .h1-line2 { color: var(--accent); }
 
     .hero-sub {
       font-family: var(--serif);
@@ -292,8 +304,38 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 160px 48px 0 0;
+      padding: 80px 5vw 0 0;
     }
+
+    /* Drapes overlay on "doing" section */
+    .doing-section { position: relative; overflow: hidden; }
+    .doing-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url('./photos that can be used/drapes.png?v=2');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.28;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .doing-section .inner { position: relative; z-index: 1; }
+
+    /* Flower photo background on longing section */
+    .longing-section { position: relative; overflow: hidden; }
+    .longing-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url('./photos that can be used/32E60206-5531-4CAE-BB87-6F0D7A3C5055.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.18;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .longing-section .inner { position: relative; z-index: 1; }
 
     .hero-date {
       font-size: 0.57rem;
@@ -1596,11 +1638,12 @@
 
     <div class="hero-left">
       <p class="hero-date h-rise">28/7 &nbsp;·&nbsp; 2 PM Bangkok &nbsp;·&nbsp; 9 AM Europe</p>
-      <h1 class="h-rise d1">The life you&rsquo;ve been<br>looking for might be<br>the one you&rsquo;ve<br>been leaving.</h1>
-
+      <h1 class="h-rise d1"><span class="h1-line1">The life you&rsquo;ve been looking for</span><br><span class="h1-line2">might be the one you&rsquo;ve been leaving.</span></h1>
       <p class="hero-desc--lead h-rise d2">A free 90-minute masterclass for the woman who longs to stop living beside her life &hellip; and instead fully in it.</p>
+    </div>
 
-      <div class="hero-form-wrap h-rise d4" id="hero-form">
+    <div class="hero-middle h-rise d3" id="hero-form">
+      <div class="hero-form-wrap">
         <div class="countdown" id="hero-countdown">
           <div class="cd-item"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div>
           <span class="cd-sep">·</span>
@@ -1623,7 +1666,6 @@
         </form>
         <span class="form-note">Free Masterclass &nbsp;·&nbsp; Online &nbsp;·&nbsp; 90 min</span>
       </div>
-
     </div>
 
     <div class="hero-right h-appear d1">
@@ -1638,7 +1680,7 @@
   <!-- ══════════════════════════
        YOU'RE DOING WHAT NEEDS TO BE DONE
   ══════════════════════════ -->
-  <section class="section s-c2">
+  <section class="section s-c2 doing-section">
     <div class="inner" style="max-width: 560px;">
 
       <p class="resonance-quote rv s1">You&rsquo;re doing what needs to be done.</p>
@@ -1653,7 +1695,7 @@
   <!-- ══════════════════════════
        WHEN LIFE ASKS SOMETHING OF US
   ══════════════════════════ -->
-  <section class="section s-c3">
+  <section class="section s-c1">
     <div class="inner">
 
       <h2 class="when-heading rv s1">When life asks something of us &hellip;</h2>
@@ -1680,7 +1722,7 @@
   <!-- ══════════════════════════
        LONGING CLOSE (condensed)
   ══════════════════════════ -->
-  <section class="section s-c2">
+  <section class="section s-c2 longing-section">
     <div class="inner">
       <div class="longing-close rv s1">
         <p>Perhaps we&rsquo;re longing for more than relief from pain.</p>
@@ -1693,7 +1735,7 @@
   <!-- ══════════════════════════
        TOGETHER, WE WILL EXPLORE  — oval cards
   ══════════════════════════ -->
-  <section class="section s-c3">
+  <section class="section s-c1">
 
     <span class="ghost-word" aria-hidden="true">stay</span>
 

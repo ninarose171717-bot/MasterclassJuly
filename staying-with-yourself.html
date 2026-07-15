@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staying With Yourself — A Free Masterclass · Nina Rose</title>
+  <meta name="description" content="A free masterclass for the woman who looks like she's holding it all together, but privately knows she has been disappearing inside the life she built.">
+  <meta property="og:title" content="Staying With Yourself — A Free Masterclass">
+  <meta property="og:description" content="You haven't lost yourself. You've just learned to give your attention to everyone but you.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream:   #FAF7F2;
+      --cream-2: #F0E9DF;
+      --ink:     #1A1008;
+      --mid:     #4A3628;
+      --soft:    #8C7A6A;
+      --rose:    #C4A08A;
+      --rose-lt: #EAD9CC;
+      --rule:    #DDD0C4;
+      --dark:    #18100A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      padding: 22px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--mid);
+      text-transform: uppercase;
+      pointer-events: all;
+      text-decoration: none;
+    }
+
+    .header-tag {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rose);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 110px 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(ellipse at center, var(--rose-lt) 0%, transparent 70%);
+      opacity: 0.5;
+      animation: breathe 12s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1) translateY(0); opacity: 0.5; }
+      50%       { transform: scale(1.08) translateY(-2%); opacity: 0.75; }
+    }
+
+    .hero-inner {
+      max-width: 780px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 36px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 7.5vw, 100px);
+      font-weight: 300;
+      line-height: 1.02;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      margin-bottom: 22px;
+    }
+
+    .hero-subline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(21px, 2.6vw, 32px);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.35;
+      margin-bottom: 28px;
+      max-width: 640px;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--soft);
+      max-width: 520px;
+      line-height: 1.85;
+      margin-bottom: 44px;
+    }
+
+    /* ── FORM ── */
+    .signup-form {
+      display: flex;
+      gap: 0;
+      max-width: 480px;
+    }
+
+    .signup-form input[type="email"] {
+      flex: 1;
+      padding: 15px 20px;
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--ink);
+      background: transparent;
+      border: 1px solid var(--rule);
+      border-right: none;
+      outline: none;
+      letter-spacing: 0.04em;
+      transition: border-color 0.3s ease;
+      -webkit-appearance: none;
+    }
+
+    .signup-form input[type="email"]::placeholder { color: var(--soft); }
+    .signup-form input[type="email"]:focus { border-color: var(--rose); }
+
+    .signup-form button,
+    .btn-seat {
+      padding: 15px 28px;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      border: 1px solid var(--ink);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .signup-form button:hover,
+    .btn-seat:hover {
+      background: var(--rose);
+      border-color: var(--rose);
+    }
+
+    .form-success {
+      display: none;
+      padding: 20px 0;
+    }
+
+    .form-success p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--mid);
+    }
+
+    .form-success span {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--soft);
+      margin-top: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── MID-PAGE CTA ── */
+    .mid-cta {
+      margin-top: 72px;
+      padding-top: 72px;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .mid-cta .rule-line {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ── ORNAMENT ── */
+    .ornament {
+      text-align: center;
+      padding: 56px 0;
+      color: var(--rose-lt);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      letter-spacing: 0.4em;
+    }
+
+    /* ── SECTIONS ── */
+    section { position: relative; }
+
+    .section-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 100px 48px;
+    }
+
+    .section-inner.wide {
+      max-width: 900px;
+    }
+
+    .section-tag {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 4.5vw, 58px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 36px;
+    }
+
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--mid);
+      margin-bottom: 22px;
+      font-weight: 300;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── RESONANCE (dark) ── */
+    .resonance {
+      background: var(--dark);
+    }
+
+    .resonance .section-inner {
+      padding: 120px 48px;
+    }
+
+    .resonance h2 {
+      color: var(--cream);
+    }
+
+    .resonance p {
+      color: rgba(250,247,242,0.65);
+    }
+
+    .resonance .section-tag {
+      color: var(--rose);
+    }
+
+    .through-list {
+      list-style: none;
+      margin: 36px 0 40px;
+    }
+
+    .through-list li {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18px, 2vw, 23px);
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(250,247,242,0.75);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      line-height: 1.4;
+    }
+
+    .through-list li:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+
+    .resonance .closing-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.4;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ── INSIDE (numbered) ── */
+    .inside { background: var(--cream-2); }
+
+    .inside-items {
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+      margin-top: 56px;
+    }
+
+    .inside-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .inside-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 68px;
+      font-weight: 300;
+      color: var(--rose-lt);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      padding-top: 4px;
+    }
+
+    .inside-content h3 {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    .inside-content p {
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .inside-closing {
+      margin-top: 56px;
+      padding-top: 48px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .inside-closing p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.45;
+    }
+
+    /* ── FOR YOU ── */
+    .for-you { background: var(--cream); }
+
+    .for-you-list {
+      list-style: none;
+      margin: 40px 0 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .for-you-list li {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.4;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .for-you-list li:first-child { border-top: 1px solid var(--rule); }
+
+    .for-you-list li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--rose);
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    /* ── PERMISSION ── */
+    .permission { background: var(--cream-2); }
+
+    .permission-lines {
+      margin: 40px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .permission-lines p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.5vw, 30px);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.35;
+      margin-bottom: 0;
+    }
+
+    .permission-closing {
+      margin-top: 52px;
+      padding-top: 48px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .permission-closing h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 2.8vw, 34px);
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .permission-closing p { font-size: 16px; }
+
+    /* ── WALK AWAY ── */
+    .walk-away { background: var(--cream); }
+
+    .outcomes-list {
+      list-style: none;
+      margin: 40px 0 52px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      counter-reset: outcomes;
+    }
+
+    .outcomes-list li {
+      counter-increment: outcomes;
+      padding: 24px 0 24px 52px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 16px;
+      color: var(--mid);
+      line-height: 1.75;
+      position: relative;
+    }
+
+    .outcomes-list li:first-child { border-top: 1px solid var(--rule); }
+
+    .outcomes-list li::before {
+      content: counter(outcomes, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 26px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--rose);
+      letter-spacing: 0.05em;
+    }
+
+    .walk-closing {
+      margin-top: 48px;
+    }
+
+    .walk-closing p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+
+    .walk-closing .plain {
+      font-family: 'Jost', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--cream-2); }
+
+    .about-body {
+      margin-top: 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .about-body p { font-size: 16px; line-height: 1.9; }
+
+    .about-em {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.4vw, 28px) !important;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--ink) !important;
+      line-height: 1.4 !important;
+      margin-top: 12px;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--dark);
+    }
+
+    .final-cta .section-inner {
+      padding: 120px 48px;
+      text-align: center;
+      max-width: 680px;
+    }
+
+    .final-cta h2 {
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+
+    .final-cta .lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(18px, 2.2vw, 26px);
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(250,247,242,0.7);
+      line-height: 1.5;
+      margin-bottom: 48px;
+    }
+
+    .final-cta .signup-form {
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    .final-cta .signup-form input[type="email"] {
+      border-color: rgba(255,255,255,0.15);
+      color: var(--cream);
+    }
+
+    .final-cta .signup-form input[type="email"]::placeholder {
+      color: rgba(250,247,242,0.35);
+    }
+
+    .final-cta .signup-form input[type="email"]:focus {
+      border-color: var(--rose);
+    }
+
+    .final-cta .signup-form button {
+      background: var(--cream);
+      color: var(--ink);
+      border-color: var(--cream);
+    }
+
+    .final-cta .signup-form button:hover {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: var(--cream);
+    }
+
+    .final-cta .form-success p {
+      color: var(--cream);
+    }
+
+    .final-cta .form-success span {
+      color: rgba(250,247,242,0.55);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 28px 48px;
+      text-align: center;
+    }
+
+    .site-footer p {
+      font-size: 12px;
+      color: rgba(250,247,242,0.25);
+      letter-spacing: 0.08em;
+      margin-bottom: 0;
+    }
+
+    /* ── ANIMATE ON SCROLL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
+    .reveal-d5 { transition-delay: 0.5s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .site-header { padding: 20px 24px; }
+      .hero { padding: 90px 24px 60px; }
+      .section-inner { padding: 80px 24px; }
+      .resonance .section-inner { padding: 80px 24px; }
+      .final-cta .section-inner { padding: 80px 24px; }
+      .site-footer { padding: 24px; }
+
+      .inside-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .inside-num {
+        font-size: 44px;
+      }
+
+      .signup-form {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .signup-form input[type="email"] {
+        border-right: 1px solid var(--rule);
+        border-bottom: none;
+        width: 100%;
+      }
+
+      .signup-form input[type="email"]:focus {
+        border-right-color: var(--rose);
+      }
+
+      .final-cta .signup-form input[type="email"] {
+        border-right-color: rgba(255,255,255,0.15);
+      }
+
+      .final-cta .signup-form input[type="email"]:focus {
+        border-right-color: var(--rose);
+      }
+
+      .signup-form button {
+        width: 100%;
+        justify-content: center;
+        border-top: none;
+      }
+
+      .header-tag { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="#">Nina Rose</a>
+    <span class="header-tag">Free Masterclass</span>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <p class="hero-tag reveal">Free masterclass</p>
+
+      <h1 class="reveal reveal-d1">
+        You haven't<br>lost yourself.
+      </h1>
+
+      <p class="hero-subline reveal reveal-d2">
+        You've just learned to give your attention<br>
+        to everyone but you.
+      </p>
+
+      <p class="hero-desc reveal reveal-d3">
+        A free masterclass for the woman who looks like she's holding it all together,
+        but privately knows she has been disappearing inside the life she built.
+      </p>
+
+      <div class="reveal reveal-d4">
+        <form class="signup-form" id="hero-form">
+          <input type="email" placeholder="your@email.com" required autocomplete="email">
+          <button type="submit">Save My Seat</button>
+        </form>
+        <div class="form-success" id="hero-success">
+          <p>You're in.</p>
+          <span>We'll be in touch soon — watch your inbox.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RESONANCE (dark) ═══ -->
+  <section class="resonance">
+    <div class="section-inner">
+      <p class="section-tag reveal">What brought you here</p>
+
+      <h2 class="reveal reveal-d1">You know how<br>to keep going.</h2>
+
+      <p class="reveal reveal-d2">
+        You know how to show up. How to anticipate what other people need.
+        How to keep the peace. How to be useful. How to make things work.
+        You know how to hold it all together.
+      </p>
+      <p class="reveal reveal-d3">
+        But somewhere along the way, your attention started living
+        everywhere except here, with you. Not in your body. Not in your needs.
+        Not in your desire. Not in the signals you keep overriding because there
+        is always something else that needs you.
+      </p>
+      <p class="reveal reveal-d4">And eventually, something in you starts to speak.</p>
+
+      <ul class="through-list">
+        <li class="reveal">Through exhaustion after work.</li>
+        <li class="reveal reveal-d1">Through resentment toward your partner and friends.</li>
+        <li class="reveal reveal-d2">Through restlessness and constantly planning the next thing.</li>
+        <li class="reveal reveal-d3">Through numbness in conversations you wish you could feel present for.</li>
+        <li class="reveal reveal-d4">Through late-night cravings.</li>
+        <li class="reveal reveal-d5">Through the ache of knowing your life looks "fine," but you don't feel fully here for it.</li>
+      </ul>
+
+      <p class="reveal" style="color:rgba(250,247,242,0.65)">
+        This is not because you did anything wrong.
+      </p>
+      <p class="closing-line reveal reveal-d1">
+        It's because something inside you learned that being loved, needed,
+        safe, and connected meant leaving yourself behind.
+      </p>
+
+      <div class="mid-cta reveal" style="margin-top:64px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 56px;">
+        <a href="#final-cta" class="btn-seat">Save My Seat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INSIDE ═══ -->
+  <section class="inside">
+    <div class="section-inner">
+      <p class="section-tag reveal">What's inside</p>
+
+      <h2 class="reveal reveal-d1">
+        In this masterclass,<br>you'll learn how to see
+        the pattern that has been running your life.
+      </h2>
+
+      <div class="inside-items">
+        <div class="inside-item reveal">
+          <div class="inside-num">01</div>
+          <div class="inside-content">
+            <h3>The attention pattern</h3>
+            <p>
+              Why your focus keeps moving toward what needs to be done,
+              who needs you, and how others feel — while the woman actually
+              living your life disappears from your attention.
+            </p>
+          </div>
+        </div>
+
+        <div class="inside-item reveal reveal-d1">
+          <div class="inside-num">02</div>
+          <div class="inside-content">
+            <h3>The hidden association</h3>
+            <p>
+              Why paying attention to you may feel selfish, unsafe, inconvenient,
+              indulgent, unfamiliar, or even dangerous.
+            </p>
+          </div>
+        </div>
+
+        <div class="inside-item reveal reveal-d2">
+          <div class="inside-num">03</div>
+          <div class="inside-content">
+            <h3>The return</h3>
+            <p>
+              A simple way to begin staying with yourself in real time —
+              without blowing up your life, becoming a different person,
+              or adding another complicated self-care routine to your list.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="inside-closing">
+        <p class="reveal">
+          By the end, you'll understand yourself differently.<br>
+          Not as someone who needs to be fixed all the time.<br>
+          But as someone who is ready to stop leaving herself in order
+          to be loved, useful, good, or okay.
+        </p>
+      </div>
+
+      <div style="margin-top: 56px;" class="reveal">
+        <a href="#final-cta" class="btn-seat">Save My Seat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOR YOU ═══ -->
+  <section class="for-you">
+    <div class="section-inner">
+      <p class="section-tag reveal">Is this for you?</p>
+      <h2 class="reveal reveal-d1">This is for you if…</h2>
+
+      <ul class="for-you-list">
+        <li class="reveal">You are tired of being the one who holds everything together.</li>
+        <li class="reveal reveal-d1">You often know what everyone else needs before you know what you need.</li>
+        <li class="reveal reveal-d2">Everyone knows how capable you are — and you know it too — but something still feels missing.</li>
+        <li class="reveal reveal-d3">You are done making your exhaustion, cravings, numbness, resentment, or shutdown mean you are doing something wrong.</li>
+        <li class="reveal reveal-d4">You are ready to see what happens when you stop being the strongest one, the smartest one, the most capable one — and begin to feel what being alive in your body feels like instead.</li>
+      </ul>
+
+      <div class="reveal">
+        <a href="#final-cta" class="btn-seat">Save My Seat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PERMISSION ═══ -->
+  <section class="permission">
+    <div class="section-inner">
+      <p class="section-tag reveal">An invitation</p>
+      <h2 class="reveal reveal-d1">You can stop waiting.</h2>
+
+      <div class="permission-lines">
+        <p class="reveal">You can stop waiting to become calmer, thinner, more disciplined, more grateful, more productive, or more "high vibe" in order to be allowed to want more.</p>
+        <p class="reveal reveal-d1">You are allowed to want a life that does not require you to numb out from it.</p>
+        <p class="reveal reveal-d2">You are allowed to have needs without apologizing for them.</p>
+        <p class="reveal reveal-d3">You are allowed to notice the places where you have disappeared without calling yourself dramatic or ungrateful — because something in you is asking to be brought back into your life.</p>
+      </div>
+
+      <div class="permission-closing">
+        <h3 class="reveal">This masterclass is an invitation to begin listening.</h3>
+        <p class="reveal reveal-d1" style="font-style:italic; font-family:'Cormorant Garamond', serif; font-size: 20px; color: var(--mid);">Not to everything and everyone else first. To you.</p>
+      </div>
+
+      <div style="margin-top: 52px;" class="reveal">
+        <a href="#final-cta" class="btn-seat">Save My Seat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WALK AWAY ═══ -->
+  <section class="walk-away">
+    <div class="section-inner">
+      <p class="section-tag reveal">What you'll take with you</p>
+      <h2 class="reveal reveal-d1">What you'll walk away with</h2>
+
+      <ul class="outcomes-list">
+        <li class="reveal">A deeper understanding of why you keep leaving yourself, even when you know better.</li>
+        <li class="reveal reveal-d1">Language for the pattern that has kept you over-functioning, people-pleasing, numbing, shrinking, or performing.</li>
+        <li class="reveal reveal-d2">A way to recognize the moment you leave yourself — and how to return without shaming yourself for it.</li>
+        <li class="reveal reveal-d3">A beginning point for feeling you — the woman who is yearning, longing, needing — this time without turning away from her as easily.</li>
+      </ul>
+
+      <div class="walk-closing">
+        <p class="reveal">And this doesn't happen through another impossible self-improvement plan. Or dissecting your past. Or controlling everything around you.</p>
+        <p class="reveal reveal-d1 plain">It happens through attention.</p>
+        <p class="reveal reveal-d2">Because where your attention goes, your life begins to reorganize.</p>
+        <p class="reveal reveal-d3 plain" style="font-style:normal; color: var(--ink); font-weight: 400;">
+          Let it reorganize around you — and not the other way around.
+        </p>
+      </div>
+
+      <div style="margin-top: 52px;" class="reveal">
+        <a href="#final-cta" class="btn-seat">Save My Seat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="about">
+    <div class="section-inner">
+      <p class="section-tag reveal">Your host</p>
+      <h2 class="reveal reveal-d1">About Nina Rose</h2>
+
+      <div class="about-body">
+        <p class="reveal">
+          I created this masterclass for the woman who looks like she's holding it all together,
+          but privately knows she has been living from "should" for too long.
+        </p>
+        <p class="reveal reveal-d1">
+          For the woman who somewhere along the way learned that being loved meant being useful.
+          Being safe meant being low-maintenance. Being good meant not needing too much.
+        </p>
+        <p class="reveal reveal-d2">
+          For the past three years, I've worked with women online and in person around one pattern
+          that sits beneath so much of what keeps us stuck: the habit of leaving ourselves.
+        </p>
+        <p class="reveal reveal-d3">
+          I also work in rehab with people in recovery.
+          Different circumstances, same question: how do we stay with ourselves when life becomes difficult?
+        </p>
+        <p class="reveal reveal-d4">
+          My work is grounded in the body — because real change doesn't happen through insight alone.
+          But more than any method or modality, I bring a willingness to stay with what is here
+          without rushing to fix, change, numb, or look away.
+        </p>
+        <p class="reveal reveal-d5">
+          I'm originally from Slovenia and now live in Thailand. Choosing a life that felt true,
+          rather than one that only looked right, has shaped everything about the work I do.
+        </p>
+        <p class="about-em reveal">
+          I'm here to help you see the pattern, stop shaming yourself,
+          and begin staying with yourself in real time.
+        </p>
+        <p class="reveal" style="color: var(--soft); font-size:15px;">
+          Because you're done being perfect. You want to be honest. And finally exhale.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="final-cta" id="final-cta">
+    <div class="section-inner">
+      <p class="section-tag reveal" style="color: var(--rose);">Free masterclass</p>
+      <h2 class="reveal reveal-d1">Begin here.</h2>
+      <p class="lead reveal reveal-d2">
+        Save your seat and we'll send you everything you need.<br>
+        No pressure. No performance. Just an honest place to start.
+      </p>
+
+      <div class="reveal reveal-d3">
+        <form class="signup-form" id="final-form">
+          <input type="email" placeholder="your@email.com" required autocomplete="email">
+          <button type="submit">Save My Seat</button>
+        </form>
+        <div class="form-success" id="final-success">
+          <p>You're in.</p>
+          <span>We'll be in touch soon — watch your inbox.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <p>© 2026 Nina Rose &nbsp;·&nbsp; @iam.ninarose</p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Hero reveals on load
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.hero .reveal').forEach(el => {
+        el.classList.add('visible');
+      });
+    });
+
+    // Form handling
+    function handleForm(formId, successId) {
+      const form = document.getElementById(formId);
+      const success = document.getElementById(successId);
+      if (!form) return;
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = form.querySelector('input[type="email"]').value;
+
+        // TODO: replace with MailerLite API call
+        // Example: fetch('https://connect.mailerlite.com/api/subscribers', {...})
+
+        form.style.display = 'none';
+        success.style.display = 'block';
+
+        // Sync both forms
+        document.querySelectorAll('.signup-form').forEach(f => f.style.display = 'none');
+        document.querySelectorAll('.form-success').forEach(s => {
+          s.style.display = 'block';
+          const span = s.querySelector('span');
+          if (span) span.textContent = 'We\'ll be in touch soon — watch your inbox.';
+        });
+      });
+    }
+
+    handleForm('hero-form', 'hero-success');
+    handleForm('final-form', 'final-success');
+
+    // Smooth scroll for anchor buttons
+    document.querySelectorAll('a[href="#final-cta"]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('final-cta').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>

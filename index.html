@@ -176,17 +176,18 @@
       min-height: 100vh;
       background: var(--c1);
       display: grid;
-      grid-template-columns: 55% 45%;
+      grid-template-columns: 60% 40%;
       align-items: stretch;
     }
 
     .hero-left {
-      padding: 140px 56px 100px 80px;
+      padding: 160px 72px 120px 9vw;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
+      gap: 0;
     }
 
     .hero-right { display: block; }
@@ -205,9 +206,9 @@
       font-size: clamp(2.2rem, 3.4vw, 3.8rem);
       font-weight: 300;
       font-style: italic;
-      line-height: 1.1;
+      line-height: 1.15;
       color: var(--text);
-      margin-bottom: 28px;
+      margin-bottom: 44px;
       max-width: 440px;
     }
 
@@ -233,13 +234,13 @@
     .hero-desc + .hero-desc { margin-bottom: 28px; }
     .hero-desc--lead {
       font-family: var(--serif);
-      font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
       font-weight: 300;
       font-style: italic;
-      color: var(--text);
-      line-height: 1.7;
+      color: var(--mid);
+      line-height: 1.75;
       max-width: 420px;
-      margin-bottom: 28px;
+      margin-bottom: 48px;
     }
 
     /* Form */
@@ -299,8 +300,8 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 28px;
-      padding: 10px 0;
+      margin-bottom: 40px;
+      padding: 12px 0;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       max-width: 380px;
@@ -1118,7 +1119,7 @@
     /* ─────────────────────────────
        FORM (new multi-field)
     ───────────────────────────── */
-    .hero-form-wrap { max-width: 380px; text-align: left; }
+    .hero-form-wrap { max-width: 440px; width: 100%; text-align: left; }
 
     .form-field {
       display: flex;

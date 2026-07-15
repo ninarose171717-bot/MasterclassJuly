@@ -1397,11 +1397,12 @@
     .ml-embedded .ml-form-successBody p { font-family: var(--sans) !important; font-size: 0.75rem !important; color: var(--muted) !important; }
 
     /* ── Hero imagine list ── */
-    .hero-imagine { list-style: none; padding: 0; margin: 0; white-space: nowrap; }
+    .hero-imagine { list-style: none; padding: 0; margin: 0; }
     .hero-imagine li {
-      font-family: var(--serif); font-size: clamp(0.72rem, 0.9vw, 0.82rem);
+      font-family: var(--serif); font-size: clamp(0.68rem, 0.82vw, 0.78rem);
       color: var(--mid); line-height: 1.35; padding: 1px 0;
       font-style: italic; font-weight: 300;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
     .hero-imagine li::before { content: '· '; color: var(--accent); font-style: normal; }
 

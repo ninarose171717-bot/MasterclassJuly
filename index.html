@@ -195,7 +195,7 @@
     .hero > * { position: relative; z-index: 1; }
 
     .hero-left {
-      padding: 160px 4vw 120px 5vw;
+      padding: 140px 4vw 100px 5vw;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -207,6 +207,18 @@
     }
 
     .hero-middle { display: none; }
+    @media (min-width: 1200px) {
+      .hero-middle {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        pointer-events: none;
+      }
+      .hero-middle .hero-photo-circle { width: 260px; height: 260px; }
+    }
 
     .hero-right {
       padding: 160px 4vw 120px 4vw;
@@ -228,13 +240,13 @@
 
     h1 {
       font-family: var(--serif);
-      font-size: clamp(1.6rem, 2.2vw, 2.5rem);
+      font-size: clamp(1.8rem, 2.6vw, 2.9rem);
       font-weight: 300;
       font-style: italic;
       line-height: 1.25;
       color: var(--text);
-      margin-bottom: 24px;
-      max-width: 400px;
+      margin-bottom: 40px;
+      max-width: 440px;
     }
     .h1-line1 { color: var(--text); }
     .h1-line2 { color: var(--accent); }
@@ -267,8 +279,8 @@
       color: var(--mid);
       line-height: 1.75;
       max-width: 420px;
-      margin-bottom: 24px;
-      margin-top: 24px;
+      margin-bottom: 36px;
+      margin-top: 40px;
     }
 
     /* Form */
@@ -1400,7 +1412,8 @@
     .hero-imagine {
       font-family: var(--serif); font-size: clamp(0.82rem, 1.05vw, 0.96rem);
       color: var(--mid); line-height: 1.85; font-style: italic; font-weight: 300;
-      text-align: center; margin: 0 0 24px; padding: 0;
+      text-align: center; margin: 0 0 40px; padding: 0;
+      max-width: 400px; width: 100%;
     }
     .hero-desc--body {
       font-family: var(--serif); font-size: clamp(0.86rem, 1.1vw, 1rem);
@@ -1779,7 +1792,7 @@
 
     <div class="hero-middle h-appear d1">
       <div class="hero-photo-circle">
-        <img src="./photos%20that%20can%20be%20used/hands-flower.png" alt="" loading="eager">
+        <img src="./photos%20that%20can%20be%20used/3370666B-967B-449E-AD51-E64A01C03DB6.png" alt="A woman walking barefoot along the shoreline at golden hour" loading="eager">
       </div>
     </div>
 
@@ -1815,9 +1828,12 @@
   <!-- ══════════════════════════
        HERO BRIDGE
   ══════════════════════════ -->
-  <section class="section s-c2" style="padding: 96px 24px;">
-    <div class="inner" style="max-width: 680px;">
-      <p class="rv" style="font-family: var(--serif); font-size: clamp(1.15rem, 1.7vw, 1.4rem); color: var(--mid); line-height: 1.95; font-weight: 300; font-style: italic; text-align: center; text-wrap: balance;">We&rsquo;ll notice where our attention goes when life turns tender, messy, or overwhelming, and what becomes possible when we begin including ourselves again. Perhaps the life we&rsquo;re longing for isn&rsquo;t elsewhere. Perhaps it&rsquo;s the one that unfolds the moment we stop leaving it.</p>
+  <section class="section s-c2" style="padding: 112px 24px;">
+    <div class="inner" style="max-width: 620px;">
+      <p class="rv" style="font-family: var(--serif); font-size: clamp(1rem, 1.4vw, 1.2rem); color: var(--mid); line-height: 1.85; font-weight: 300; font-style: italic; text-align: center; margin-bottom: 6px;">We&rsquo;ll notice where our attention goes when life turns tender, messy, or overwhelming,</p>
+      <p class="rv s1" style="font-family: var(--serif); font-size: clamp(1rem, 1.4vw, 1.2rem); color: var(--muted); line-height: 1.85; font-weight: 300; font-style: italic; text-align: center; margin-bottom: 72px;">and what becomes possible when we begin including ourselves again.</p>
+      <p class="rv s2" style="font-family: var(--serif); font-size: clamp(1.35rem, 2vw, 1.75rem); color: var(--text); line-height: 1.55; font-weight: 300; font-style: italic; text-align: center; margin-bottom: 20px;">Perhaps the life we&rsquo;re longing for isn&rsquo;t elsewhere.</p>
+      <p class="rv s3" style="font-family: var(--serif); font-size: clamp(1.35rem, 2vw, 1.75rem); color: var(--text); line-height: 1.55; font-weight: 300; font-style: italic; text-align: center; margin-bottom: 0;">Perhaps it&rsquo;s the one that unfolds the moment we stop leaving it.</p>
     </div>
   </section>
 
@@ -1920,9 +1936,13 @@
   <section class="section s-c2 longing-section">
     <div class="inner" style="max-width: 680px;">
       <div class="longing-close rv s1">
-        <p>Perhaps we&rsquo;re not just longing for less pain, but for a life more richly felt.</p>
-        <p>To taste the warmth of soup. To feel water on skin in the morning shower. To let your hips move to a good song. To really see your friend&rsquo;s face instead of rehearsing your response. To laugh from somewhere deeper.</p>
-        <p style="font-size: clamp(1rem, 1.5vw, 1.3rem);">Not a different life. The one you already have, met more intimately by the woman living it.</p>
+        <p style="font-size: clamp(0.95rem, 1.3vw, 1.1rem); color: var(--muted); margin-bottom: 52px;">Perhaps we&rsquo;re not just longing for less pain, but for a life more richly felt.</p>
+        <p style="color: var(--text); margin-bottom: 18px; line-height: 1.5;">To taste the warmth of soup.</p>
+        <p style="color: var(--text); margin-bottom: 18px; line-height: 1.5;">To feel water on skin in the morning shower.</p>
+        <p style="color: var(--text); margin-bottom: 18px; line-height: 1.5;">To let your hips move to a good song.</p>
+        <p style="color: var(--text); margin-bottom: 18px; line-height: 1.5;">To really see your friend&rsquo;s face instead of rehearsing your response.</p>
+        <p style="color: var(--text); margin-bottom: 64px; line-height: 1.5;">To laugh from somewhere deeper.</p>
+        <p style="font-size: clamp(1.15rem, 1.7vw, 1.5rem); color: var(--text); font-weight: 400; font-style: normal; margin-bottom: 0; line-height: 1.65;">Not a different life. The one you already have, met more intimately by the woman living it.</p>
       </div>
     </div>
   </section>
@@ -1931,22 +1951,22 @@
   <!-- ══════════════════════════
        WHAT THIS MASTERCLASS IS REALLY ABOUT
   ══════════════════════════ -->
-  <section class="section s-c1">
+  <section class="section s-dark">
     <div class="inner" style="max-width: 680px;">
-      <h2 class="when-heading rv s1">What This Masterclass Is Really About</h2>
+      <h2 class="when-heading rv s1" style="color: rgba(249,245,240,0.95);">What This Masterclass Is Really About</h2>
 
-      <p class="rv s2" style="font-family:var(--serif); font-size:clamp(1.2rem,1.8vw,1.55rem); color:var(--text); font-style:italic; line-height:1.85; font-weight:300; text-align:center; margin-bottom:56px;">Maybe the question isn&rsquo;t how to get better at self-care.<br>Maybe it&rsquo;s: how do I stay connected to myself<br>while actually living my life?</p>
+      <p class="rv s2" style="font-family:var(--serif); font-size:clamp(1.2rem,1.8vw,1.55rem); color:rgba(249,245,240,0.92); font-style:italic; line-height:1.85; font-weight:300; text-align:center; margin-bottom:56px;">Maybe the question isn&rsquo;t how to get better at self-care.<br>Maybe it&rsquo;s: how do I stay connected to myself<br>while actually living my life?</p>
 
-      <p class="rv s3" style="font-family:var(--serif); font-size:clamp(1.15rem,1.7vw,1.38rem); color:var(--mid); line-height:1.95; font-weight:300; text-align:center; margin-bottom:80px;">Staying with yourself means you don&rsquo;t have to disappear, even mid-uncertainty, conflict, longing, or joy. You get to remain there too, while you love, speak, ache, long, grieve, live.</p>
+      <p class="rv s3" style="font-family:var(--serif); font-size:clamp(1.15rem,1.7vw,1.38rem); color:rgba(243,237,229,0.70); line-height:1.95; font-weight:300; text-align:center; margin-bottom:80px;">Staying with yourself means you don&rsquo;t have to disappear, even mid-uncertainty, conflict, longing, or joy. You get to remain there too, while you love, speak, ache, long, grieve, live.</p>
 
       <!-- Cascade -->
-      <p class="rv s4" style="font-family:var(--serif); font-size:clamp(1.15rem,1.7vw,1.38rem); color:var(--mid); font-style:italic; font-weight:300; text-align:center; line-height:2.2; margin-bottom:4px;">Maybe we haven&rsquo;t lost ourselves at all.</p>
-      <p class="rv s4" style="font-family:var(--serif); font-size:clamp(1.15rem,1.7vw,1.38rem); color:var(--mid); font-style:italic; font-weight:300; text-align:center; line-height:2.2; margin-bottom:36px;">Maybe we&rsquo;ve simply forgotten what it feels like to stay,</p>
-      <p class="rv s5" style="font-family:var(--serif); font-size:clamp(1.12rem,1.55vw,1.3rem); color:var(--muted); font-style:italic; font-weight:300; text-align:center; line-height:2.5;">while disappointed,</p>
-      <p class="rv s5" style="font-family:var(--serif); font-size:clamp(1.12rem,1.55vw,1.3rem); color:var(--muted); font-style:italic; font-weight:300; text-align:center; line-height:2.5;">while afraid,</p>
-      <p class="rv s5" style="font-family:var(--serif); font-size:clamp(1.12rem,1.55vw,1.3rem); color:var(--muted); font-style:italic; font-weight:300; text-align:center; line-height:2.5;">while desiring something,</p>
-      <p class="rv s5" style="font-family:var(--serif); font-size:clamp(1.12rem,1.55vw,1.3rem); color:var(--muted); font-style:italic; font-weight:300; text-align:center; line-height:2.5;">while misunderstood,</p>
-      <p class="rv s5" style="font-family:var(--serif); font-size:clamp(1.12rem,1.55vw,1.3rem); color:var(--text); font-style:italic; font-weight:300; text-align:center; line-height:2.5; margin-bottom:0;">while life asks us to feel.</p>
+      <p class="rv s4" style="font-family:var(--serif); font-size:clamp(1.15rem,1.7vw,1.38rem); color:rgba(243,237,229,0.68); font-style:italic; font-weight:300; text-align:center; line-height:2.2; margin-bottom:4px;">Maybe we haven&rsquo;t lost ourselves at all.</p>
+      <p class="rv s4" style="font-family:var(--serif); font-size:clamp(1.15rem,1.7vw,1.38rem); color:rgba(243,237,229,0.68); font-style:italic; font-weight:300; text-align:center; line-height:2.2; margin-bottom:36px;">Maybe we&rsquo;ve simply forgotten what it feels like to stay,</p>
+      <p class="rv s5" style="font-family:var(--serif); font-size:clamp(1.12rem,1.55vw,1.3rem); color:rgba(243,237,229,0.48); font-style:italic; font-weight:300; text-align:center; line-height:2.5;">while disappointed,</p>
+      <p class="rv s5" style="font-family:var(--serif); font-size:clamp(1.12rem,1.55vw,1.3rem); color:rgba(243,237,229,0.48); font-style:italic; font-weight:300; text-align:center; line-height:2.5;">while afraid,</p>
+      <p class="rv s5" style="font-family:var(--serif); font-size:clamp(1.12rem,1.55vw,1.3rem); color:rgba(243,237,229,0.48); font-style:italic; font-weight:300; text-align:center; line-height:2.5;">while desiring something,</p>
+      <p class="rv s5" style="font-family:var(--serif); font-size:clamp(1.12rem,1.55vw,1.3rem); color:rgba(243,237,229,0.48); font-style:italic; font-weight:300; text-align:center; line-height:2.5;">while misunderstood,</p>
+      <p class="rv s5" style="font-family:var(--serif); font-size:clamp(1.12rem,1.55vw,1.3rem); color:rgba(249,245,240,0.92); font-style:italic; font-weight:300; text-align:center; line-height:2.5; margin-bottom:0;">while life asks us to feel.</p>
     </div>
   </section>
 
